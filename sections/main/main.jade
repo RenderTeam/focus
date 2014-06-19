@@ -1,33 +1,67 @@
-.row
-    .large-12.columns
-        h1
-          | Pomodoro 
-          small Let's work and make Render Awesome.
-        hr
-    .row
-      .large-9.columns
-        large-3.columns
-          |Graphic
+.off-canvas-wrap.docs-wrap(data-offcanvas='')
+  .inner-wrap
+    nav.tab-bar
+      section.left-small
+        a.left-off-canvas-toggle.menu-icon
+          span
+      section.right.tab-bar-section
+        h1.title Pomodoro by RenderTeam
+    aside.left-off-canvas-menu
+      ul.off-canvas-list
+        li
+          label Pomodoro
+        li
+          a(href='#') Numbers
+        li
+          a(href='#') Graphics
+        li
+          a(href='#') MembersCards
+        li
+          a(href='#') Logros
+        li
+          label Render Github
+        li
+          a(href='#') MainPage
+        li
+          a(href='#') ProyectPage
+        li
+          label Consulting
+        li
+          a(href='#') Foundation
+        li
+          a(href='#') Bootstrap
+    section.main-section
+      .row
+        .large-12.columns
+          h1
+            | Proyecto que se esté trabajando
+            h4.subheader Let's work and make Render Awesome.
           hr
-          |What to do , With QUien , Add
-          hr
-          |Ng-repeat participants
-      .large-3.columns
-        h5 Let's Work
-        ul.side-nav
-          li
-            .button.button Let's Work NOW!
-          li
-            h2|Time restante Here
-        .panel
-          h5 Chat
-          p
-            | Only important things.
-    footer.row
-      .large-12.columns
-        hr
         .row
-          .large-6.columns
-            p © RenderTeam
-          .large-6.columns
-            ul.inline-list.right
+          .large-9.columns
+            large-3.columns
+            |Graphic
+            hr
+            |What to do , With QUien , Add
+            hr
+            |Ng-repeat participants
+          .large-3.columns
+            h5 Let's Work
+            ul.side-nav
+              li
+                .button.button.radious.round Let's Work NOW!
+              li
+                h2|Time restante Here
+            .panel
+              h5 Chat
+              p
+                | Only important things.
+        footer.row
+          .large-12.columns
+            hr
+            .row
+              .large-6.columns
+                h6.subheader © RenderTeam
+              .large-6.columns
+                ul.inline-list.right
+    a.exit-off-canvas

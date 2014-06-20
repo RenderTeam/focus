@@ -1,5 +1,5 @@
 doctype
-.off-canvas-wrap.docs-wrap(data-offcanvas='')
+.off-canvas-wrap.docs-wrap( data-offcanvas )
   .inner-wrap
     nav.tab-bar
       section.left-small
@@ -12,25 +12,25 @@ doctype
         li
           label Pomodoro
         li
-          a(href='#') Numbers
+          a( href = '#' ) Numbers
         li
-          a(href='#') Graphics
+          a( href = '#' ) Graphics
         li
-          a(href='#') MembersCards
+          a( href = '#' ) MembersCards
         li
-          a(href='#') Logros
+          a( href = '#' ) Logros
         li
           label Render Github
         li
-          a(href='#') MainPage
+          a( href = '#' ) MainPage
         li
-          a(href='#') ProyectPage
+          a( href = '#' ) ProyectPage
         li
           label Consulting
         li
-          a(href='#') Foundation
+          a( href = '#' ) Foundation
         li
-          a(href='#') Bootstrap
+          a( href = '#' ) Bootstrap
     section.main-section
       .row
         .large-12.columns
@@ -50,19 +50,26 @@ doctype
                   label
                     | Que vas a hacer 
                     small required
-                    input(type='text', placeholder='Breve descripcion de lo que vas a hacer hoy' 
-                      , required='')
+                    input(
+                      type = 'text'
+                      placeholder = 'Breve descripcion de lo que vas a hacer hoy' 
+                      required
+                    )
                 .large-4.columns
                   label
                     .name-field
                     | Con Quien
-                    input(type='text', placeholder='Trabajaras con'
-                      ,pattern='[a-zA-Z]+' , required='')
+                    input(
+                      type = 'text'
+                      placeholder = 'Trabajaras con'
+                      pattern = '[a-zA-Z]+'
+                      required
+                    )
                 .large-1.columns
                   label Add
                     button(type='submit').tiny +
             hr
-            |Ng-repeat participants
+            | Ng-repeat participants
           .large-3.columns
             h5 Let's Work
             ul.side-nav

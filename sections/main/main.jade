@@ -39,10 +39,27 @@
           hr
         .row
           .large-9.columns
-            large-3.columns
+            .large-12.columns
             |Graphic
             hr
-            |What to do , With QUien , Add
+            form
+              fieldset
+                legend Trabajo de Hoy
+                .large-7.columns
+                  label
+                    | Que vas a hacer 
+                    small required
+                    input(type='text', placeholder='Breve descripcion de lo que vas a hacer hoy' 
+                      , required='')
+                .large-4.columns
+                  label
+                    .name-field
+                    | Con Quien
+                    input(type='text', placeholder='Trabajaras con'
+                      ,pattern='[a-zA-Z]+' , required='')
+                .large-1.columns
+                  label Add
+                    button(type='submit').tiny +
             hr
             |Ng-repeat participants
           .large-3.columns
@@ -64,4 +81,3 @@
                 h6.subheader © RenderTeam
               .large-6.columns
                 ul.inline-list.right
-    a.exit-off-canvas

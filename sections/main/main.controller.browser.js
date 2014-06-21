@@ -7,6 +7,6 @@ module.exports = function ( angular, app ) {
 
   main.$inject = [ '$scope' ];
   function main ( scope ) {
-
+    
   }
 };

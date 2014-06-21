@@ -25,7 +25,11 @@
   },
   "browserify-shim": {
     "jquery": "$",
-    "foundation": "foundation",
+    "foundation": {
+      "depends": [
+        "jquery:$"
+      ]
+    },
     "angular": {
       "exports": "angular",
       "depends": [

@@ -1,4 +1,4 @@
-doctype
+doctype html
 .off-canvas-wrap.docs-wrap( data-offcanvas )
   .inner-wrap
     nav.tab-bar
@@ -77,10 +77,16 @@ doctype
                 .button.button.radious.round Let's Work NOW!
               li
                 h2|Time restante Here
-            .panel
-              h5 Chat
-              p
-                | Only important things.
+            .large-12.columns
+              .panel
+                h5 Chat
+                  p
+                    | Only important things.
+              .row.collapse
+                .small-10.columns
+                  input(type='text', placeholder='Chatiar')
+                .small-2.columns
+                  a.button.postfix(href='#') Go
         footer.row
           .large-12.columns
             hr

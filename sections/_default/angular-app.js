@@ -7,7 +7,6 @@ require('angular-route');
 require('angular-foundation');
 require('foundation');
 
-
 var app = angular.module('focus', [
       'mm.foundation',
       'ngRoute',

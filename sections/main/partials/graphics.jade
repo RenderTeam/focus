@@ -1,19 +1,19 @@
-doctype html
-form( data-abide )
-  .name-field
-    label
-      | Your name
-      small required
-      input(
-        pattern = '[a-zA-Z]+'
-        required
-        type = 'text'
-      )
-    small.error Name is required and must be a string.
-  .email-field
-    label
-      | Email
-      small required
-      input(type='email', required)
-    small.error An email address is required.
-  button(type='submit') Submit
+form
+  .row.collapse
+    .small-3.large-2.columns
+      span.prefix http://
+    .small-9.large-10.columns
+      input(type='text', placeholder='Enter your URL...')
+  .row
+    .large-6.columns
+      .row.collapse
+        .small-10.columns
+          input(type='text', placeholder='Hex Value')
+        .small-2.columns
+          a.button.postfix(href='#') Go
+    .large-6.columns
+      .row.collapse
+        .small-9.columns
+          input(type='text', placeholder='Value')
+        .small-3.columns
+          span.postfix.radius Label

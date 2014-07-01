@@ -34,10 +34,6 @@ doctype html
           a( href = '#' ) Bootstrap
     section.main-section
       .row
-        .large-12.columns
-          h1
-            | Proyecto que se esté trabajando
-            h4.subheader Let's work and make Render Awesome.
           hr
         .row
           .large-9.columns
@@ -74,20 +70,28 @@ doctype html
           .large-3.columns
             h5 Let's Work
             ul.side-nav
+              li.text-center
+                .button.button.radious Let's Work NOW!
               li
-                .button.button.radious.round Let's Work NOW!
-              li
-                h2|Time restante Here
-            .large-12.columns
+                h2.text-center 00:00
+            .large-12.columns.chat
                   //- .panel
-                h5 Chat
-                  p
-                    | Only important things.
+                  div(
+                    ng-repeat = 'message in messages'
+                  )
+                    p(ng-bind = 'message.username')
+                    p(ng-bind = 'message.message')
+                    p(ng-bind = 'message.date')
+
               .row.collapse
-                .small-10.columns
-                  input(type='text', placeholder='Chatiar...')
-                .small-2.columns
-                  a.button.postfix(href='#') Go
+                .small-8.columns
+                  input(
+                    ng-model = 'message'
+                    type = 'text'
+                    placeholder = 'Nanananana....'
+                  )
+                .small-4.columns
+                  a.button.success.postfix( ng-click = 'sendMessage()' ) Send
         footer.row
           .large-12.columns
             hr

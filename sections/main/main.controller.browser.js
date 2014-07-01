@@ -7,10 +7,22 @@ module.exports = function ( angular, app ) {
 
   main.$inject = [ '$scope', 'Socket' ];
   function main ( scope, Socket ) {
-    Socket.on( 'news', function ( data ) {
+    scope.messages = [];
+
+    Socket.on( 'new message', function ( data ) {
       console.log(data);
+      scope.messages.push(data);
     });
 
-    Socket.emit('yolo',{hola:'yolo'});
+
+    scope.sendMessage = function () {
+      var params = {
+        username: 'Username',
+        date: new Date(),
+        message: scope.message
+      };
+
+      Socket.emit( 'send message', params );
+    };
   }
 };

@@ -48,8 +48,17 @@ app.get(/\/html\/([\w\/]+)\.html/, function (req, res) {
 
  * Start Server
  */
+var server = http.createServer(app);
 
-http.createServer(app).listen(app.get('port'), function () {
+server.listen(app.get('port'), function () {
   console.log('Express app listening on port ' + app.get('port'));
 });
 
+var io = require('socket.io')(server);
+
+io.on('connection', function (socket) {
+  socket.emit('news', { hello: 'world' });
+  socket.on('my other event', function (data) {
+    console.log(data);
+  });
+});

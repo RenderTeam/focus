@@ -1,2 +1,23 @@
-button.button
-  | Yolo
+doctype html
+
+form( data-abide )
+  .name-field
+    label
+      | Your name
+      small required
+      input(
+        type='text'
+        required
+        pattern='[a-zA-Z]+'
+      )
+    small.error Name is required and must be a string.
+  .email-field
+    label
+      | Email
+      small required
+      input(
+        type='email'
+        required
+      )
+    small.error An email address is required.
+  button(type='submit') Submit

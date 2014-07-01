@@ -1,12 +1,13 @@
 /* jslint node: true */
+/* globals document */
 'use strict';
 var di = require('di');
 var angular = require('angular');
+var $ = require('jquery');
+var Foundation = require('foundation');
 require('angular-resource');
 require('angular-route');
 require('angular-foundation');
-require('foundation');
-
 
 var app = angular.module('focus', [
       'mm.foundation',

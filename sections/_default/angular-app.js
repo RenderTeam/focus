@@ -8,7 +8,6 @@ var Foundation = require('foundation');
 require('angular-resource');
 require('angular-route');
 require('angular-foundation');
-require('angular-socket');
 
 var app = angular.module('focus', [
       'btford.socket-io',

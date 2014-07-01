@@ -10,6 +10,9 @@ module.exports = function ( app ) {
       .when( '/', {
         controller: 'Main',
         templateUrl : '/html/main/main.html'
+      }).when( '/hola', {
+        controller: 'Main',
+        templateUrl : '/html/main/partials/graphics.html'
       });
   }
 };

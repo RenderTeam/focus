@@ -10,5 +10,7 @@ module.exports = function ( angular, app ) {
     Socket.on( 'news', function ( data ) {
       console.log(data);
     });
+
+    Socket.emit('yolo',{hola:'yolo'});
   }
 };

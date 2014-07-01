@@ -1,12 +1,18 @@
-doctype html5
-html(ng-app='focus')
+doctype html
+html(
+  ng-app = 'focus'
+)
   head
-    meta(charset='utf8')
-    base(href='/')
+    meta( charset = 'utf8' )
+    base( href = '/' )
     title Angular Express Browserify
-    
-    link(rel='stylesheet', href='/css/app.css')
+
+    link(
+      href = '/css/app.css'
+      rel = 'stylesheet'
+    )
   body
     block body
 
-    script(src='/js/app.min.js')
+    script( src = '/socket.io/socket.io.js' )
+    script( src = '/js/app.min.js' )

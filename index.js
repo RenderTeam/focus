@@ -25,7 +25,7 @@ app.use(express.compress());
 app.use(express.methodOverride());
 app.use(express.bodyParser());
 app.use('/css', expressLess(__dirname + '/sections/_default/less'));
-app.use(express.static(path.join(__dirname, 'static')));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use('/vendor', express.static(__dirname + '/bower_components'));
 app.use(app.router);
 
@@ -33,32 +33,29 @@ app.use(app.router);
  * Routes
  */
 
+/*
+ * Start Server
+ */
+var server = http.createServer( app ),
+    io = require('socket.io')( server ),
+    params = {
+      server: app,
+      io: io
+    };
+
 // Add the routes from the sections
-sections(app);
+sections( params );
 
 // serve index and view partials
 app.get('/', function (req, res) {
   res.render('_default/index');
 });
+
 app.get(/\/html\/([\w\/]+)\.html/, function (req, res) {
   var name = req.params[0];
   res.render(name);
 });
-/*
-
- * Start Server
- */
-var server = http.createServer(app);
 
 server.listen(app.get('port'), function () {
   console.log('Express app listening on port ' + app.get('port'));
-});
-
-var io = require('socket.io')(server);
-
-io.on('connection', function (socket) {
-  socket.emit('news', { hello: 'world' });
-  socket.on('my other event', function (data) {
-    console.log(data);
-  });
 });

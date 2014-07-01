@@ -1,5 +1,5 @@
 /* jslint node: true */
-/* globals document */
+/* globals io */
 'use strict';
 var di = require('di');
 var angular = require('angular');
@@ -8,19 +8,29 @@ var Foundation = require('foundation');
 require('angular-resource');
 require('angular-route');
 require('angular-foundation');
+require('angular-socket');
 
 var app = angular.module('focus', [
+      'btford.socket-io',
       'mm.foundation',
       'ngRoute',
       'ngResource'
     ]);
-app.config(function ($routeProvider) {
-  $routeProvider.otherwise({redirectTo : '/view1'});
-});
+
+app.config( config );
+
+config.$inject = ['$routeProvider'];
+function config ( routeProvider ) {
+  routeProvider
+    .otherwise(
+      { redirectTo : '/'}
+    );
+}
 
 var uiModules = {
   angular   : [ 'value', angular ],
-  app       : [ 'value', app ]
+  app       : [ 'value', app ],
+  io        : [ 'value', io ]
 };
 uiModules.uiModules = [ 'value', uiModules ];
 

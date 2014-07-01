@@ -24,7 +24,8 @@
     "foundation": "./bower_components/foundation/js/foundation.min.js",
     "angular-resource": "./bower_components/angular-resource/angular-resource.js",
     "angular-foundation": "./bower_components/angular-foundation/mm-foundation-tpls.min.js",
-    "angular-route": "./bower_components/angular-route/angular-route.js"
+    "angular-route": "./bower_components/angular-route/angular-route.js",
+    "angular-socket": "./bower_components/angular-socket-io/socket.min.js"
   },
   "browserify-shim": {
     "jquery": "$",
@@ -46,6 +47,11 @@
       ]
     },
     "angular-route": {
+      "depends": [
+        "angular:angular"
+      ]
+    },
+    "angular-socket": {
       "depends": [
         "angular:angular"
       ]

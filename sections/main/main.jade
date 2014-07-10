@@ -77,13 +77,24 @@ doctype html
             .large-12.columns.chat
                   //- .panel
                   div(
-                    ng-repeat = 'message in messages'
+                    ng-repeat = 'message in messages',
+                    class = '{{message.type}}'
                   )
-                    p(ng-bind = 'message.username')
-                    p(ng-bind = 'message.message')
-                    p(ng-bind = 'message.date')
+                    div(ng-bind = 'message.username')
+                    div(ng-bind = 'message.message')
+                    div(ng-bind = 'message.date')
 
               .row.collapse
+                .small-8.columns
+                  input(
+                    ng-model = 'user.username'
+                    type = 'text'
+                    placeholder = '¿Quién eres?'
+                  )
+                .small-2.columns
+                  a.button.success.postfix( ng-click = 'addUser()' ) Iniciar chat
+                .small-2.columns
+                  a.button.alert.postfix( ng-click = 'removeUser()' ) Salir
                 .small-8.columns
                   input(
                     ng-model = 'message'

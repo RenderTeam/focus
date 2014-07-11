@@ -11,6 +11,8 @@ require('angular-route');
 require('angular-foundation');
 require('angular-socket');
 
+require('polymer-platform');
+
 var app = angular.module('focus', [
       'btford.socket-io',
       'mm.foundation',

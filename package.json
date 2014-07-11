@@ -25,10 +25,12 @@
     "angular-resource": "./bower_components/angular-resource/angular-resource.js",
     "angular-foundation": "./bower_components/angular-foundation/mm-foundation-tpls.min.js",
     "angular-route": "./bower_components/angular-route/angular-route.js",
-    "angular-socket": "./bower_components/angular-socket-io/socket.min.js"
+    "angular-socket": "./bower_components/angular-socket-io/socket.min.js",
+    "polymer-platform": "./bower_components/platform/platform.js"
   },
   "browserify-shim": {
     "jquery": "$",
+    "polymer-platform": "polymer-platform",
     "foundation": {
       "exports": "Foundation",
       "depends": [

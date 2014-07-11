@@ -74,8 +74,7 @@ doctype html
                   | Let's Work NOW!
               li
                 h2.text-center
-                  -//timer(countdown="10041", max-time-unit="'minute'", interval="1000"){{mminutes}}:{{sseconds}}
-                  timer
+                  timer(countdown="10", max-time-unit="'minute'", interval="1000"){{mminutes}}:{{sseconds}}
             .large-12.columns.chat
                   //- .panel
                   div(

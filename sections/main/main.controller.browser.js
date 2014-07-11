@@ -5,15 +5,15 @@ var __ = require('underscore')._;
 module.exports = function ( angular, app ) {
   app.controller( 'Main', main );
 
-  main.$inject = [ '$scope', 'Socket', 'timer'];
-  function main ( scope, Socket, timer) {
-    scope.timerRunning = false;
+  main.$inject = [ '$scope', 'Socket'];
+  function main ( scope, Socket) {
     scope.messages = [];
     scope.users = [];
     scope.tiempo = {
       time: 1,//convert to miliseconds
       run: false
     };
+    scope.countdownattr: 100;
     Socket.on( 'new message', function ( data ) {
       scope.messages.push(data);
     });

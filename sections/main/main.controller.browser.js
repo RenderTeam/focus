@@ -5,8 +5,8 @@ var __ = require('underscore')._;
 module.exports = function ( angular, app ) {
   app.controller( 'Main', main );
 
-  main.$inject = [ '$scope', 'Socket', 'timer'];
-  function main ( scope, Socket, timer) {
+  main.$inject = [ '$scope', 'Socket' ];
+  function main ( scope, Socket ) {
     scope.timerRunning = false;
     scope.messages = [];
     scope.users = [];

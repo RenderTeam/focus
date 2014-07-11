@@ -17,6 +17,7 @@
     "angular-foundation": "~0.2.2",
     "foundation": "~5.2.3",
     "angular-socket-io": "~0.6.0",
-    "polymer": "Polymer/polymer#~0.3.3"
+    "polymer": "Polymer/polymer#~0.3.3",
+    "angular-timer": "~1.1.6"
   }
 }

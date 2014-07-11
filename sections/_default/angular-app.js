@@ -12,7 +12,7 @@ require('angular-foundation');
 require('angular-socket');
 require('angular-timer');
 
-require('polymer-platform');
+//require('polymer-platform');
 
 var app = angular.module('focus', [
       'btford.socket-io',

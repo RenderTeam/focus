@@ -45,8 +45,7 @@ doctype html
                 legend Trabajo de Hoy
                 .large-7.columns
                   label
-                    | Que vas a hacer
-                    small required
+                    | ¿Qué vas a hacer?
                     input(
                       type = 'text'
                       placeholder = 'Breve descripcion de lo que vas a hacer hoy'
@@ -55,7 +54,7 @@ doctype html
                 .large-4.columns
                   label
                     .name-field
-                    | Con Quien
+                    | ¿Con Quién?
                     input(
                       type = 'text'
                       placeholder = 'Trabajaras con'
@@ -71,9 +70,12 @@ doctype html
             h5 Let's Work
             ul.side-nav
               li.text-center
-                .button.button.radious Let's Work NOW!
+                .button.button.radious(ng-click="workNow()")
+                  | Let's Work NOW!
               li
-                h2.text-center 00:00
+                h2.text-center
+                  -//timer(countdown="10041", max-time-unit="'minute'", interval="1000"){{mminutes}}:{{sseconds}}
+                  timer
             .large-12.columns.chat
                   //- .panel
                   div(

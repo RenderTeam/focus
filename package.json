@@ -25,7 +25,8 @@
     "angular-resource": "./bower_components/angular-resource/angular-resource.js",
     "angular-foundation": "./bower_components/angular-foundation/mm-foundation-tpls.min.js",
     "angular-route": "./bower_components/angular-route/angular-route.js",
-    "angular-socket": "./bower_components/angular-socket-io/socket.min.js"
+    "angular-socket": "./bower_components/angular-socket-io/socket.min.js",
+    "angular-timer": "./bower_components/angular-timer/dist/angular-timer.js"
   },
   "browserify-shim": {
     "jquery": "$",

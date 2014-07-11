@@ -6,9 +6,10 @@ var angular = require('angular');
 var di = require('di');
 var Foundation = require('foundation');
 
+require('angular-foundation');
+require('angular-google-chart');
 require('angular-resource');
 require('angular-route');
-require('angular-foundation');
 require('angular-socket');
 require('angular-timer');
 
@@ -16,6 +17,7 @@ require('angular-timer');
 
 var app = angular.module('focus', [
       'btford.socket-io',
+      'googlechart',
       'mm.foundation',
       'ngRoute',
       'ngResource',

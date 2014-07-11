@@ -7,6 +7,7 @@ module.exports = function ( angular, app ) {
 
   main.$inject = [ '$scope', 'Socket' ];
   function main ( scope, Socket ) {
+    scope.isLoggedIn = false;
     scope.timerRunning = false;
     scope.messages = [];
     scope.users = [];
@@ -14,6 +15,7 @@ module.exports = function ( angular, app ) {
       time: 1,//convert to miliseconds
       run: false
     };
+
     Socket.on( 'new message', function ( data ) {
       scope.messages.push(data);
     });
@@ -37,14 +39,7 @@ module.exports = function ( angular, app ) {
     });
 
     scope.addUser = function () {
-      var usernames = __.pluck(scope.users, 'username');
-      if(scope.user.username && !__.contains(usernames, scope.user.username)){
-        var user = {
-          username : scope.user.username,
-          status : true
-        };
-        Socket.emit( 'add user', user);
-      }
+      var usernames = __.pluck( scope.users, 'username' );
     };
 
     scope.removeUser = function () {
@@ -61,9 +56,9 @@ module.exports = function ( angular, app ) {
     scope.sendMessage = function () {
       var params = {
         username: scope.user.username,
-        date: new Date(),
+        date:    new Date(),
         message: scope.message,
-        type: 'normal'
+        type:    'normal'
       };
       Socket.emit( 'send message', params );
     };
@@ -73,6 +68,12 @@ module.exports = function ( angular, app ) {
         username : scope.user.username
       };
       Socket.emit('to work', userToWork);
+    };
+
+    scope.logIn = function () {
+      scope.isLoggedIn = true;
+      scope.user.status = true;
+      Socket.emit( 'add user', scope.user);
     };
   }
 };

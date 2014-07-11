@@ -1,6 +1,22 @@
 doctype html
 
-.off-canvas-wrap.docs-wrap( data-offcanvas )
+.row( ng-show = '!isLoggedIn' )
+  .small-6.large-centered.columns
+    .large-12.columns
+      label Usuario
+        input(
+          ng-model = 'user.username'
+          type = 'text'
+          placeholder = 'Batman'
+        )
+      button.button.expand(
+        ng-click = 'logIn()'
+      )
+
+.off-canvas-wrap.docs-wrap(
+  data-offcanvas
+  ng-show = 'isLoggedIn'
+)
   .inner-wrap
     nav.tab-bar
       section.left-small

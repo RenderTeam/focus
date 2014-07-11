@@ -27,7 +27,8 @@
     "angular-route": "./bower_components/angular-route/angular-route.js",
     "angular-socket": "./bower_components/angular-socket-io/socket.min.js",
     "polymer-platform": "./bower_components/platform/platform.js",
-    "angular-timer": "./bower_components/angular-timer/dist/angular-timer.js"
+    "angular-timer": "./bower_components/angular-timer/dist/angular-timer.js",
+    "angular-google-chart": "./bower_components/angular-google-chart/ng-google-chart.js"
   },
   "browserify-shim": {
     "jquery": "$",
@@ -65,6 +66,11 @@
       ]
     },
     "angular-foundation": {
+      "depends": [
+        "angular:angular"
+      ]
+    },
+    "angular-google-chart": {
       "depends": [
         "angular:angular"
       ]

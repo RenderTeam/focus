@@ -5,25 +5,27 @@ var __ = require('underscore')._;
 module.exports = function ( angular, app ) {
   app.controller( 'Main', main );
 
-  main.$inject = [ '$scope', 'Socket' ];
-  function main ( scope, Socket ) {
+  main.$inject = [ '$scope', 'Socket', 'timer'];
+  function main ( scope, Socket, timer) {
+    scope.timerRunning = false;
     scope.messages = [];
     scope.users = [];
-
+    scope.tiempo = {
+      time: 1,//convert to miliseconds
+      run: false
+    };
     Socket.on( 'new message', function ( data ) {
       scope.messages.push(data);
     });
 
-    Socket.on( 'new user', function ( data ) {
-      scope.messages.push(data);
-    });
-
-    Socket.on( 'remove user', function ( data ) {
-      scope.messages.push(data);
+    Socket.on( 'work now', function ( data ) {
+      //Let's start the work
+      var time = scope.tiempo.time*60*1000;//in miliseconds
+      //Iniciar temporizador
+      Socket.emit('start timer', time);
     });
 
     Socket.on( 'online users', function ( data ) {
-      console.log(data.length);
       var message = {
         username: '',
         date: '',
@@ -64,6 +66,13 @@ module.exports = function ( angular, app ) {
         type: 'normal'
       };
       Socket.emit( 'send message', params );
+    };
+
+    scope.workNow = function (){
+      var userToWork = {
+        username : scope.user.username
+      };
+      Socket.emit('to work', userToWork);
     };
   }
 };

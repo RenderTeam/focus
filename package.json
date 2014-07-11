@@ -26,7 +26,8 @@
     "angular-foundation": "./bower_components/angular-foundation/mm-foundation-tpls.min.js",
     "angular-route": "./bower_components/angular-route/angular-route.js",
     "angular-socket": "./bower_components/angular-socket-io/socket.min.js",
-    "polymer-platform": "./bower_components/platform/platform.js"
+    "polymer-platform": "./bower_components/platform/platform.js",
+    "angular-timer": "./bower_components/angular-timer/dist/angular-timer.js"
   },
   "browserify-shim": {
     "jquery": "$",
@@ -54,6 +55,11 @@
       ]
     },
     "angular-socket": {
+      "depends": [
+        "angular:angular"
+      ]
+    },
+    "angular-timer": {
       "depends": [
         "angular:angular"
       ]
